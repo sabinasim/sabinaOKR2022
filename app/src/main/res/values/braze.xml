@@ -3,4 +3,5 @@
     <string name="com_appboy_api_key">501704a9-7a1b-4e86-b451-a558008d4784</string>
     <string translatable="false" name="com_appboy_custom_endpoint">sdk.iad-03.braze.com</string>
     <bool translatable="false" name="com_appboy_firebase_cloud_messaging_registration_enabled">true</bool>
+    <bool name="com_appboy_enable_location_collection">true</bool>
 </resources>
