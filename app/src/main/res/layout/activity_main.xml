@@ -17,25 +17,26 @@
         android:layout_marginRight="17dp"
         android:text="Email:"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintEnd_toStartOf="@+id/set_email"
         app:layout_constraintHorizontal_bias="0.388"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/set_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:hint="email@email.com"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.746"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/email_submit"
+        android:id="@+id/email_submit_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -43,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.825"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/set_email" />
 
     <TextView
         android:id="@+id/custom_event_lb"
@@ -69,9 +70,10 @@
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="Log custom event"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/set_email" />
 
     <Button
         android:id="@+id/log_event_bt"
@@ -82,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.853"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_submit" />
+        app:layout_constraintTop_toBottomOf="@+id/email_submit_bt" />
 
     <TextView
         android:id="@+id/custom_attr_lb"
@@ -108,7 +110,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:hint="Log custom attribute"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.786"
@@ -126,5 +129,17 @@
         app:layout_constraintHorizontal_bias="0.834"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/custom_attrlog" />
+
+    <TextView
+        android:id="@+id/current_user"
+        android:layout_width="326dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="124dp"
+        android:hint="...user_id..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/custom_attrlog"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
