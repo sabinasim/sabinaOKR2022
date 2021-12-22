@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "708618025884",
+    "project_id": "brazesdk",
+    "storage_bucket": "brazesdk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708618025884:android:833d5191be05c0ce54a659",
+        "android_client_info": {
+          "package_name": "com.example.sabinaokr2022"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708618025884-0fn9iaa8q7ogkqmnqem6dkqluk2effrr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9Zggsrl_KZg6CJccE8afm3fYCHZk3jtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708618025884-0fn9iaa8q7ogkqmnqem6dkqluk2effrr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

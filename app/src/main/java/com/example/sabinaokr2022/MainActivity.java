@@ -1,5 +1,6 @@
 package com.example.sabinaokr2022;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Application;
@@ -7,11 +8,15 @@ import android.content.res.Resources;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import com.braze.Braze;
 import com.braze.BrazeUser;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.UUID;
 
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Button cEventButton;
     private EditText cAttr;
     private Button cAttrButton;
+    private static final String TAG = "SabinaSDKActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,30 @@ public class MainActivity extends AppCompatActivity {
         cEventButton = findViewById(R.id.log_event_bt);
         cAttr = findViewById(R.id.custom_attrlog);
         cAttrButton = findViewById(R.id.custom_attr_bt);
+
+
+        //get fcm push token
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(new OnCompleteListener<String>() {
+                    @Override
+                    public void onComplete(@NonNull Task<String> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "Fetching FCM registration token failed", task.getException());
+                            return;
+                        }
+
+                        // Get new FCM registration token
+                        final String fcm_token = task.getResult();
+
+                        // Log and register the push
+                        Log.i(TAG, "================");
+                        Log.i(TAG, "================");
+                        Log.i(TAG, "Registering firebase token in Application class: " + fcm_token);
+                        Log.i(TAG, "================");
+                        Log.i(TAG, "================");
+                        Braze.getInstance(context).registerAppboyPushMessages(fcm_token);
+                    }
+                });
 
         //this is to get the current user of the session
         BrazeUser currUser = Braze.getInstance(context).getCurrentUser();
